@@ -1,6 +1,8 @@
 from Thyroid_Disease.constants import *
 from Thyroid_Disease.utils.common import read_yaml, create_directories
-from Thyroid_Disease.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from Thyroid_Disease.entity.config_entity import (DataIngestionConfig, 
+                                                  DataValidationConfig, 
+                                                  DataTransformationConfig)
 
 # configuration manager
 class ConfigurationManager:
@@ -41,3 +43,15 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         return data_validtion_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir= config.root_dir,
+            data_path= config.data_path,
+        )
+
+        create_directories([config.root_dir])
+
+        return data_transformation_config

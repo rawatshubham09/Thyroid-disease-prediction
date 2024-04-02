@@ -4,11 +4,12 @@ notebook
 numpy
 scikit-learn
 matplotlib
-python-box==6.0.2
+python-box
 xgboost
 pyYAML
 tqdm
-ensure==1.0.2
+ensure
+imbalanced-learn
 joblib
 types-PyYAML
 Flask
