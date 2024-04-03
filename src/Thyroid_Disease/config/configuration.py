@@ -2,7 +2,8 @@ from Thyroid_Disease.constants import *
 from Thyroid_Disease.utils.common import read_yaml, create_directories
 from Thyroid_Disease.entity.config_entity import (DataIngestionConfig, 
                                                   DataValidationConfig, 
-                                                  DataTransformationConfig)
+                                                  DataTransformationConfig,
+                                                  ModelTrainerConfig)
 
 # configuration manager
 class ConfigurationManager:
@@ -55,3 +56,22 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.XGBClassifier
+        schema = self.schema.TARGET_COLUMN
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path= config.test_data_path,
+            model_name=config.model_name,
+            subsample= params.subsample,
+            gamma = params.gamma,
+            target_column= schema.name,
+        )
+
+        create_directories([config.root_dir])
+
+        return model_trainer_config
