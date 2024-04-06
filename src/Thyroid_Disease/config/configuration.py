@@ -3,7 +3,8 @@ from Thyroid_Disease.utils.common import read_yaml, create_directories
 from Thyroid_Disease.entity.config_entity import (DataIngestionConfig, 
                                                   DataValidationConfig, 
                                                   DataTransformationConfig,
-                                                  ModelTrainerConfig)
+                                                  ModelTrainerConfig,
+                                                  ModulEvaluationConfig)
 
 # configuration manager
 class ConfigurationManager:
@@ -75,3 +76,23 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         return model_trainer_config
+    
+    def get_model_evalution_config(self) -> ModulEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.XGBClassifier
+        schema = self.schema.TARGET_COLUMN
+
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModulEvaluationConfig(
+            root_dit=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            all_params=params,
+            metric_file_name=config.metric_file_name,
+            target_column=schema.name,
+            mlflow_uri="https://dagshub.com/rawatshubham09/Thyroid-disease-prediction.mlflow",
+        )
+
+        return model_evaluation_config

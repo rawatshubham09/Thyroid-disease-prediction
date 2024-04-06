@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/DataScience/Thyroid-disease-prediction/mlruns/0/23430db787ec47e190cac8624af1201d/artifacts
+end_time: 1712382183240
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 23430db787ec47e190cac8624af1201d
+run_name: abundant-bee-61
+run_uuid: 23430db787ec47e190cac8624af1201d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712382183132
+status: 4
+tags: []
+user_id: rawat

@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/DataScience/Thyroid-disease-prediction/mlruns/0/ba3025f052d94b5e915c5e9f7849fcf3/artifacts
+end_time: 1712381995057
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ba3025f052d94b5e915c5e9f7849fcf3
+run_name: suave-rook-811
+run_uuid: ba3025f052d94b5e915c5e9f7849fcf3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712381994911
+status: 4
+tags: []
+user_id: rawat
