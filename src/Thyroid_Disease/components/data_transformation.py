@@ -3,6 +3,8 @@ from Thyroid_Disease import logger
 from sklearn.model_selection import train_test_split
 from sklearn.impute import KNNImputer
 from imblearn.over_sampling import RandomOverSampler
+from Thyroid_Disease.utils.common import create_directories
+import joblib
 from sklearn.preprocessing import LabelEncoder
 from Thyroid_Disease.config.configuration import DataTransformationConfig
 import pandas as pd
@@ -31,7 +33,7 @@ class DataTransformation:
 
     def dropColumns(self) -> None:
         name = ['TSH_measured', 'T3_measured', 'TT4_measured', 
-                'T4U_measured', 'TBG' , 'FTI_measured','TBG_measured','TSH']
+                'T4U_measured', 'TBG' , 'FTI_measured','TBG_measured','TSH','referral_source']
         
         self.data.drop(name, inplace=True, axis=1, errors="ignore")
         logger.info(f"Columns are dropped from DataFrame : {name}")
@@ -52,9 +54,6 @@ class DataTransformation:
         for col in self.data.columns:
             if len(self.data[col].unique())==2:
                 self.data[col] = self.data[col].map({'f':0,'t':1})
-
-        # creating dummies columns of referral source
-        self.data = pd.get_dummies(self.data, columns=['referral_source'], dtype='int')
         
         logger.info("replacement of categorical data into Numerical is completed")
 
@@ -65,8 +64,8 @@ class DataTransformation:
         # fitting Label encoding in class column
         self.data["Class"] = lblEn.fit_transform(self.data['Class'])
 
-        logger.info("Label Encoding is completed on Class columns")
-        # saving  as  lable_encoding object as pickle
+        with open(self.config.class_file, "w") as f:
+                        f.write(f"{lblEn.classes_}")
 
         logger.info("Pickle file of label object is save in location : PATH ")
     

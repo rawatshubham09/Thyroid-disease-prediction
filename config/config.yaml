@@ -14,8 +14,7 @@ data_validation:
 data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_ingestion/hypothyroid.csv
-  label_encoder_dir: artifacts/saved
-  label_encoder_name: artifacts/saved/label_encoder.joblib
+  class_text : artifacts/data_transformation/class.txt
 
 model_trainer:
   root_dir: artifacts/model_trainer
