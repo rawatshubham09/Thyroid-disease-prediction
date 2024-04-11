@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/DataScience/Thyroid-disease-prediction/mlruns/0/b87a5fce1f034a0dab84b4902e883387/artifacts
+end_time: 1712859851409
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b87a5fce1f034a0dab84b4902e883387
+run_name: amusing-asp-819
+run_uuid: b87a5fce1f034a0dab84b4902e883387
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712859847508
+status: 3
+tags: []
+user_id: rawat
