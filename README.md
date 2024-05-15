@@ -7,7 +7,7 @@
 - The project may contribute to the field of medical informatics by providing a tool for better management of thyroid diseases.
 
 # ECR Repo to save docker image
-- 851451558858.dkr.ecr.ap-south-1.amazonaws.com/thyroid-proj
+- 851.dkr.ecr.ap-south-1.amazonaws.com/thyroid-proj
 
 
 
