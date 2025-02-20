@@ -6,9 +6,6 @@
 - Potential integration with healthcare systems to assist medical professionals in early diagnosis and treatment planning.
 - The project may contribute to the field of medical informatics by providing a tool for better management of thyroid diseases.
 
-# ECR Repo to save docker image
-- 851.dkr.ecr.ap-south-1.amazonaws.com/thyroid-proj
-
 
 
 # Youtube link
